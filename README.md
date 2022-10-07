@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 專案執行
+
+1. clone 本專案到本地端
+2. 執行 `npm install` 安裝本專案所需套件。
+3. 執行 `npm start`/`npm run start` 即可在本地端起段專案。
+
 ## Available Scripts
 
 In the project directory, you can run:
