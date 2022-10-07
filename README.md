@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 網站連結
+
+1. [首頁](https://kw0409.github.io/react-foodhub/)
+2. [食物選單頁](https://kw0409.github.io/react-foodhub/#/restaurant/FoodMenu)
+3. [食物篩選頁](https://kw0409.github.io/react-foodhub/#/restaurant/RestaurantTwoColumn)
+
 ## 專案執行
 
 1. clone 本專案到本地端
