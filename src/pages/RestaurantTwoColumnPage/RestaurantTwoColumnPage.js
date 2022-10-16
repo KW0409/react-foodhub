@@ -25,7 +25,7 @@ const Container = styled.div`
   text-align: center;
 `;
 
-export default function FoodMenuPage() {
+export default function RestaurantTwoColumnPage() {
   return (
     <Wrapper className="restaurant-two-column-wrapper">
       <Container>I am RestaurantTwoColumnPage</Container>
