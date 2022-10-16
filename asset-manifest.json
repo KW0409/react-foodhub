@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-foodhub/static/css/main.c29afbee.css",
-    "main.js": "/react-foodhub/static/js/main.54218556.js",
+    "main.js": "/react-foodhub/static/js/main.6f754220.js",
     "static/js/787.e438ca9d.chunk.js": "/react-foodhub/static/js/787.e438ca9d.chunk.js",
     "static/media/header-bg.d39c465.png": "/react-foodhub/static/media/header-bg.d39c465.c91cc7963d9a2b527ea1.png",
     "static/media/17.3634737.jpg": "/react-foodhub/static/media/17.3634737.a6100ce7f3611a8042e0.jpg",
@@ -12,11 +12,11 @@
     "static/media/foodTruck_logo.png": "/react-foodhub/static/media/foodTruck_logo.afdaea9bbf473fd880c7.png",
     "index.html": "/react-foodhub/index.html",
     "main.c29afbee.css.map": "/react-foodhub/static/css/main.c29afbee.css.map",
-    "main.54218556.js.map": "/react-foodhub/static/js/main.54218556.js.map",
+    "main.6f754220.js.map": "/react-foodhub/static/js/main.6f754220.js.map",
     "787.e438ca9d.chunk.js.map": "/react-foodhub/static/js/787.e438ca9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c29afbee.css",
-    "static/js/main.54218556.js"
+    "static/js/main.6f754220.js"
   ]
 }
