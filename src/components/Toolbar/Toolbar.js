@@ -164,7 +164,7 @@ function showBar(location) {
 }
 
 // 控制 toolbar 在滑動頁面時的 style
-function scrollBar(element, location) {
+function barScrollStyle(element, location) {
   const showShadow =
     "box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);";
 
@@ -193,7 +193,7 @@ export default function Toolbar() {
   useEffect(() => {
     setIsShow(showBar(location));
     window.addEventListener("scroll", () =>
-      scrollBar(toolbarRef.current, location)
+      barScrollStyle(toolbarRef.current, location)
     );
   }, [location]);
 
