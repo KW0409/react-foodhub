@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   MEDIA_QUERY_LG,
@@ -13,10 +14,8 @@ const Wrapper = styled.div`
   width: 100%;
   height: 64px;
   background: #fff;
-  display: flex;
+  display: ${(props) => (props.$isShow ? "flex" : "none")};
   align-items: center;
-  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
-    0 1px 10px 0 rgb(0 0 0 / 12%);
 
   position: fixed;
   top: 0;
@@ -157,9 +156,54 @@ const NavbarButton = styled.button`
   }
 `;
 
+// 控制 toolbar 是否要在這個 url 顯現
+function showBar(location) {
+  let pathName = location.pathname;
+  if (pathName !== "/") return true;
+  return false;
+}
+
+// 控制 toolbar 在滑動頁面時的 style
+function scrollBar(element, location) {
+  const showShadow =
+    "box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);";
+
+  if (window.scrollY > 0) {
+    element.setAttribute("style", showShadow);
+  } else {
+    element.removeAttribute("style");
+  }
+  if (location.pathname !== "/") return;
+
+  const showElement =
+    "display: flex; box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);";
+  if (window.scrollY > 436) {
+    element.setAttribute("style", showElement);
+  } else {
+    element.removeAttribute("style");
+  }
+}
+
 export default function Toolbar() {
+  const location = useLocation();
+
+  const toolbarRef = useRef();
+  const [isShow, setIsShow] = useState(() => showBar(location));
+
+  useEffect(() => {
+    setIsShow(showBar(location));
+    window.addEventListener("scroll", () =>
+      scrollBar(toolbarRef.current, location)
+    );
+  }, [location]);
+
   return (
-    <Wrapper className="toolbar" id="tool-bar">
+    <Wrapper
+      $isShow={isShow}
+      ref={toolbarRef}
+      className="toolbar"
+      id="tool-bar"
+    >
       <Container>
         <Link to="/">
           <LogoContainer>
@@ -195,3 +239,23 @@ export default function Toolbar() {
     </Wrapper>
   );
 }
+
+/*
+https://ithelp.ithome.com.tw/articles/10276921
+
+https://www.uj5u.com/qiye/179493.html
+
+https://ithelp.ithome.com.tw/m/articles/10279966
+
+https://ithelp.ithome.com.tw/articles/10207679
+
+https://codepen.io/cy810912/pen/rNVKRGY?editors=1111
+
+http://www.eion.com.tw/Blogger/?Pid=1154
+
+https://www.796t.com/content/1549928701.html
+
+https://www.jianshu.com/p/43c249d8ed17
+
+https://zhangjiali0627.github.io/页面交互/2020-06-05/animation.html
+*/
