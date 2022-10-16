@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   background: #fff;
   display: ${(props) => (props.$isShow ? "flex" : "none")};
   align-items: center;
+  transition: all 0.2s;
 
   position: fixed;
   top: 0;
